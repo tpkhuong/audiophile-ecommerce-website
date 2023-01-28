@@ -1,0 +1,36 @@
+/* mobile */
+
+.recommendation-container {
+  text-align: center;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: var(--heading-sm-three);
+}
+
+.cards-container {
+  margin-block-start: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .section-title {
+    font-size: var(--heading-sm);
+  }
+  .cards-container {
+    flex-direction: row;
+    gap: 11px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .cards-container {
+    gap: 30px;
+  }
+}

@@ -1,0 +1,64 @@
+/* mobile */
+
+.title-items {
+  /* we could use flex and gap 88px instead of declaring margin-block-start on this element */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: var(--heading-sm-three);
+}
+
+.items-list {
+  padding-inline-start: 0;
+}
+
+.items-list > * + * {
+  margin-block-start: 8px;
+}
+
+.quantity-item {
+  list-style: none;
+  font-size: var(--heading-reg-sm);
+}
+
+.quantity {
+  color: var(--color-primary-orange);
+  font-weight: 700;
+  margin-inline-end: 24px;
+}
+
+.item {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  /* space between title and items in 162px */
+  .title-items {
+    flex-direction: revert;
+    display: flex;
+    gap: 162px;
+  }
+
+  .title {
+    font-size: var(--heading-sm);
+    transform: translateY(-8px);
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .title-items {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .title {
+    transform: translateY(0);
+  }
+}

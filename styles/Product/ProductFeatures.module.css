@@ -1,0 +1,38 @@
+/* mobile */
+
+.title {
+  font-size: var(--heading-sm-three);
+}
+
+.top {
+  margin-block: 24px;
+  margin-block-start: 20px;
+}
+
+.top,
+.bottom {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: var(--heading-reg-sm);
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .title {
+    font-size: var(--heading-sm);
+  }
+
+  .top {
+    margin-block: 32px;
+    margin-block-start: 28px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .features-textcontent {
+    flex-basis: 635px;
+  }
+}

@@ -1,0 +1,46 @@
+.wrapper {
+  margin-block-end: 20px;
+}
+
+.total-of-errors {
+  margin-block-end: 16px;
+}
+
+.title-list-errors:not(:last-child) {
+  margin-block-end: 16px;
+}
+
+.title {
+  margin-block-end: 16px;
+  font-size: var(--heading-reg-sm);
+}
+
+.emoney-errors-list li:first-child,
+.shipping-errors-list li:not(:last-child),
+.billing-errors-list li:not(:last-child),
+.personal-errors-list li:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+li.error-links {
+  font-size: var(--heading-reg-x-sm);
+  list-style: revert;
+}
+
+li.error-links a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 90rem) {
+  .total-of-errors {
+    font-size: 23px;
+  }
+  .title {
+    font-size: var(--heading-sm-four);
+  }
+
+  li.error-links {
+    font-size: var(--heading-reg);
+  }
+}

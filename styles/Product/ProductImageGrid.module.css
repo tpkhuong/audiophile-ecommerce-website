@@ -1,0 +1,33 @@
+/* general */
+.top-left,
+.bottom-left,
+.large-right {
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* mobile */
+
+.two-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .two-row-left {
+    flex-basis: 445px;
+  }
+
+  .large-right {
+    flex-basis: 635px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .two-row-left {
+    gap: 32px;
+  }
+}

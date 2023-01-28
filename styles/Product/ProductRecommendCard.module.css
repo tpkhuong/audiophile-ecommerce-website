@@ -1,0 +1,18 @@
+/* mobile */
+
+.card-title {
+  margin-block: 32px;
+  font-size: var(--heading-sm-three);
+}
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .card-title {
+    margin-block: 32px;
+    margin-block-start: 40px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+}

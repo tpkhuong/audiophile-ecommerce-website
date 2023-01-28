@@ -1,0 +1,82 @@
+/* mobile */
+
+.summary-wrapper {
+  padding-inline: 24px;
+  padding-block: 32px;
+  background-color: var(--color-neutral-white);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  font-size: var(--heading-sm-four);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.empty-cart-message {
+  font-size: var(--heading-reg-sm);
+  font-weight: 700;
+}
+
+.summary-item-list {
+  /* list-style: none; */
+  padding-inline-start: 0;
+  margin-block-start: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* total tax shipping */
+
+.total-tax-shipping-wrapper {
+  margin-block: 32px;
+}
+
+.text {
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-size: var(--heading-reg-sm);
+}
+
+.price {
+  font-weight: 700;
+  font-size: var(--heading-sm-four);
+}
+
+.total-price-wrapper,
+.shipping-price-wrapper,
+.vat-price-wrapper,
+.grand-total-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipping-price-wrapper {
+  margin-block: 8px;
+}
+
+.grand-total-price-wrapper {
+  margin-block-start: 24px;
+}
+
+.grand-total-price-wrapper .price {
+  color: var(--color-primary-orange);
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .summary-wrapper {
+    padding: 32px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .summary-wrapper {
+    align-self: flex-start;
+    flex-basis: 350px;
+  }
+}

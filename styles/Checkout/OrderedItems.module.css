@@ -1,0 +1,111 @@
+/* mobile */
+
+.items-total-wrapper {
+  border-radius: 8px;
+  margin-block: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.items-wrapper {
+  background-color: var(--color-primary-grey);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 24px;
+}
+
+.ordered-items-list {
+  padding-inline-start: 0;
+}
+
+.ordered-items-list > div:nth-child(2) {
+  margin-block: 16px;
+}
+
+.horizontal-line {
+  min-height: 1px;
+  margin-block: 8px;
+  background-color: var(--color-nav-bar-line);
+}
+
+.view-less-more-btn {
+  font-size: var(--heading-reg-xxx-sm);
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0;
+  background-color: transparent;
+  width: max-content;
+  margin-inline: auto;
+  display: block;
+}
+
+.grand-total-wrapper {
+  background-color: var(--color-neutral-black);
+  color: var(--color-neutral-white);
+  padding-inline-start: 24px;
+  padding-block-start: 15px;
+  padding-block-end: 19px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.grand-title {
+  text-transform: uppercase;
+  font-size: var(--heading-reg-sm);
+  color: var(--color-text);
+}
+
+.spacer {
+  min-height: 8px;
+}
+
+.price-wrapper {
+  font-weight: 700;
+  font-size: var(--heading-sm-four);
+}
+
+.price-digit {
+  margin-inline-start: 5px;
+}
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .items-total-wrapper {
+    flex-direction: revert;
+  }
+
+  .items-wrapper {
+    border-top-left-radius: 8px;
+    border-top-right-radius: revert;
+    border-bottom-left-radius: 8px;
+  }
+
+  .style-wrapper[data-oneitem="true"] {
+    padding-block-end: 0;
+  }
+
+  .style-wrapper {
+    flex-grow: 1;
+    background-color: var(--color-neutral-black);
+    display: flex;
+    padding-inline-start: 24px;
+    padding-block-end: 42px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .style-wrapper[data-oneitem="true"] .grand-total-wrapper {
+    margin-block: auto;
+  }
+
+  .grand-total-wrapper {
+    color: var(--color-neutral-white);
+    padding: 0;
+    margin-block-start: auto;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+}

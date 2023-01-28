@@ -1,0 +1,22 @@
+/* mobile */
+
+.form-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .form-summary-wrapper {
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .form-summary-wrapper {
+    flex-direction: revert;
+    gap: 30px;
+  }
+}

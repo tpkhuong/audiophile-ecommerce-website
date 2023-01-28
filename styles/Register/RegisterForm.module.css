@@ -1,0 +1,110 @@
+/* form validation */
+
+/* can't be empty */
+
+.form input {
+  cursor: pointer;
+}
+
+.form input:focus,
+.form input:hover {
+  outline: 3px solid var(--color-primary-orange);
+}
+
+.form [data-isempty="true"] input,
+.form [data-isvalid="false"] input,
+.form [data-ismatchedpassword="false"] input {
+  outline: 5px solid red;
+}
+
+.form [data-isempty="true"] .error,
+.form [data-isvalid="false"] .invalid,
+.form [data-isaccepted="true"] .accepted,
+.form [data-ismatchedpassword="false"] .not-matched-pw {
+  display: inline-block;
+}
+
+.form [data-ismatchedpassword="true"] .matched-pw {
+  display: inline-block;
+}
+
+.email-wrapper,
+.password-wrapper,
+.confirm-password-wrapper {
+  position: relative;
+}
+
+.error,
+.invalid,
+.not-matched-pw {
+  color: var(--color-primary-error);
+}
+
+.error,
+.invalid,
+.not-matched-pw,
+.matched-pw,
+.accepted {
+  font-weight: 700;
+  font-size: var(--heading-reg-sm);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+/* not a match */
+
+.required-text {
+  margin-inline-start: 8px;
+  font-weight: 500;
+}
+
+.password-wrapper {
+  margin-block: 16px;
+}
+
+.form input,
+.create-account-btn {
+  border-radius: 8px;
+}
+
+.form label {
+  color: var(--color-primary-orange);
+  font-weight: 700;
+}
+
+.form input {
+  -webkit-appearance: none;
+  margin-block-start: 4px;
+  display: block;
+  padding-block: 8px;
+  padding-inline-start: 10px;
+  width: 100%;
+  background-color: var(--color-register-login-input);
+}
+
+.create-account-btn {
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: var(--color-primary-orange);
+  color: var(--color-neutral-white);
+  display: block;
+  padding-block: 10px;
+  margin-block: 16px;
+  margin-block-start: 30px;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+  .form input {
+    margin-block-start: 6px;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .password-wrapper {
+    margin-block-start: 24px;
+  }
+}

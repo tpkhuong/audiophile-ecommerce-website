@@ -1,0 +1,18 @@
+/* mobile */
+
+.text-content-wrapper {
+  margin-block-end: 16px;
+}
+
+.margin-block-end {
+  margin-block-end: 10px;
+}
+
+.text-content-wrapper p {
+  line-height: 1.2;
+}
+
+.text-content-wrapper a {
+  text-decoration: underline;
+  font-size: var(--heading-reg);
+}

@@ -1,0 +1,29 @@
+/* mobile */
+
+.title {
+  text-transform: uppercase;
+  background-color: var(--color-neutral-black);
+  color: var(--color-neutral-white);
+  font-size: var(--heading-sm-two);
+  text-align: center;
+  padding-block: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .title {
+    padding-block: 105px;
+    padding-block-end: 97px;
+    font-size: var(--heading-med);
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .title {
+    padding-block: 98px;
+  }
+}

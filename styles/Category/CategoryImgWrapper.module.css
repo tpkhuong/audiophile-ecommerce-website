@@ -1,0 +1,10 @@
+.img-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 90rem) {
+  .img-wrapper {
+    flex-basis: 540px;
+  }
+}

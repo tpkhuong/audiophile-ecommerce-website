@@ -1,0 +1,187 @@
+/* mobile */
+
+/* general */
+
+.large-single-column,
+.small-single-column,
+.two-column-img-wrapper,
+.two-column-title-button-wrapper {
+  border-radius: 8px;
+}
+
+.featured-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* large column */
+
+.large-single-column {
+  background-image: url("/home/desktop/pattern-circles.svg");
+  background-size: 36rem;
+  background-position: -120px -128px;
+  background-repeat: no-repeat;
+  background-color: var(--color-primary-orange);
+  padding-block: 55px;
+  padding-inline: 24px;
+}
+
+.speaker-img-wrapper {
+  max-width: 172px;
+  margin-inline: auto;
+}
+
+.large-text-content {
+  color: var(--color-neutral-white);
+  text-align: center;
+}
+
+.large-title {
+  font-size: var(--heading-sm);
+  width: min-content;
+  margin-inline: auto;
+  margin-block-start: 32px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: var(--heading-reg-sm);
+  line-height: 1.7;
+  margin-block: 24px;
+}
+
+/* single column */
+
+.small-single-column {
+  background-image: url("/home/mobile/image-speaker-zx7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-block: 100px;
+  padding-inline-start: 24px;
+}
+
+.single-title {
+  font-size: var(--heading-sm-two);
+  font-weight: 700;
+  margin-block-end: 32px;
+}
+
+/* two column */
+
+.two-column {
+  display: grid;
+  /* flex-direction: column; */
+  gap: 24px;
+}
+
+.two-column-img-wrapper {
+  overflow: hidden;
+}
+
+.two-column-title-button-wrapper {
+  padding-inline-start: 24px;
+  padding-block: 42px;
+  background-color: var(--color-primary-grey);
+}
+
+.two-column-title {
+  font-size: var(--heading-sm-two);
+  font-weight: 700;
+  margin-block-end: 32px;
+}
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  /* large single */
+  .large-single-column {
+    background-size: 56rem;
+    background-position: -100px -253px;
+    padding-block-start: 52px;
+    padding-block-end: 64px;
+    /* padding-inline: 24px; */
+  }
+
+  .speaker-img-wrapper {
+    max-width: 197px;
+  }
+
+  .large-title {
+    font-size: var(--heading-lrg);
+    line-height: 1;
+    margin-block-start: 64px;
+  }
+
+  .description {
+    margin-block-end: 40px;
+    max-width: 350px;
+    margin-inline: auto;
+  }
+
+  /* small single */
+
+  .small-single-column {
+    background-image: url("/home/tablet/image-speaker-zx7.jpg");
+    padding-inline-start: 62px;
+  }
+
+  /* two column */
+
+  .two-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .two-column-title-button-wrapper {
+    padding-inline-start: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  /* large single colum */
+
+  .large-single-column {
+    display: flex;
+    padding-block-end: 0px;
+    padding-block-start: 118px;
+    gap: 138px;
+    padding-inline-start: 118px;
+    overflow: hidden;
+  }
+
+  .speaker-img-wrapper {
+    max-width: 410px;
+    margin-inline: revert;
+    transform: translateY(12px);
+  }
+
+  .large-text-content {
+    text-align: revert;
+    align-self: flex-start;
+  }
+
+  .large-title {
+    margin-inline: revert;
+    margin-block-start: 0px;
+  }
+
+  /* small single column */
+  .small-single-column {
+    background-image: url("/home/desktop/image-speaker-zx7.jpg");
+    padding-inline-start: 95px;
+  }
+
+  /* two column */
+
+  .two-column {
+    gap: 30px;
+  }
+
+  .two-column-title-button-wrapper {
+    padding-inline-start: 95px;
+  }
+}

@@ -1,0 +1,85 @@
+/* remove up and down arrow of input type number */
+
+/* hover/focus for increment/decrement and add cart btn */
+
+.increment:focus,
+.decrement:focus,
+.increment:hover,
+.decrement:hover {
+  color: var(--color-primary-orange);
+}
+
+.add-cart-btn:focus,
+.add-cart-btn:hover {
+  background-color: var(--color-orange-hover);
+}
+
+/* chrome */
+.quantity-wrapper input[type="number"]::-webkit-outer-spin-button,
+.quantity-wrapper input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+}
+
+.addcart-wrapper {
+  width: max-content;
+  display: flex;
+  gap: 16px;
+  margin-block-start: 32px;
+}
+
+/* decrement, input, increment */
+
+.quantity-wrapper {
+  display: flex;
+  background-color: var(--color-primary-grey);
+}
+
+.quantity-wrapper input {
+  width: 40px;
+}
+
+.quantity-wrapper input,
+.quantity-wrapper button {
+  padding: 0;
+  background-color: transparent;
+  padding-block: 15px;
+}
+
+.quantity-wrapper input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  text-align: center;
+}
+
+button.decrement {
+  padding-inline-start: 23px;
+  padding-inline-end: 15px;
+}
+
+button.increment {
+  padding-inline-start: 15px;
+  padding-inline-end: 20px;
+}
+
+/* add cart btn */
+
+.add-cart-btn {
+  color: var(--color-neutral-white);
+  background-color: var(--color-primary-orange);
+  text-transform: uppercase;
+  font-size: var(--heading-reg-xx-sm);
+  font-weight: 700;
+  padding-block: 15px;
+  padding-inline-start: 34.5px;
+  padding-inline-end: 30.5px;
+}
+
+/* tablet */
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .addcart-wrapper {
+    margin-block-start: 48px;
+  }
+}

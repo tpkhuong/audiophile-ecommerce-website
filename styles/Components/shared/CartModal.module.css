@@ -1,0 +1,116 @@
+/* mobile */
+
+/* hover/focus for remove all and checkout btn */
+
+.remove-all-btn:focus,
+.remove-all-btn:hover {
+  color: var(--color-primary-orange);
+}
+
+.checkout-btn:focus,
+.checkout-btn:hover {
+  background-color: var(--color-orange-hover);
+}
+
+.cart-modal-wrapper {
+  position: absolute;
+  inset: 0;
+  top: 92px;
+  z-index: 1;
+  background-color: hsl(0 0% 0% / 0.3);
+}
+
+.cart-wrapper {
+  position: absolute;
+  background-color: var(--color-neutral-white);
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  padding-inline: 28px;
+  padding-block: 32px;
+  border-radius: 8px;
+}
+
+/* cart reove all close btn */
+
+.title-remove-all-close-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-quantity {
+  font-size: var(--heading-sm-four);
+}
+
+.remove-all-btn {
+  color: var(--color-text);
+  font-size: var(--heading-reg-sm);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.close-btn {
+  background-color: transparent;
+}
+
+.cart-items-container {
+  margin-block: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-inline-start: 0;
+}
+
+.item-wrapper {
+  list-style: none;
+}
+
+/* total and price */
+
+.total-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 24px;
+}
+
+.total {
+  text-transform: uppercase;
+  font-size: var(--heading-reg-sm);
+  color: var(--color-text);
+}
+
+.price {
+  font-size: var(--heading-sm-four);
+  font-weight: 700;
+}
+
+.checkout-btn {
+  background-color: var(--color-primary-orange);
+  color: var(--color-neutral-white);
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--heading-reg-xx-sm);
+  padding: 0;
+  padding-block: 15px;
+  width: 100%;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .cart-wrapper {
+    width: 377px;
+    left: revert;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .cart-wrapper {
+    right: 165px;
+  }
+}

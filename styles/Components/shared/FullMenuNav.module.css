@@ -1,0 +1,63 @@
+/* mobile */
+
+.desktop-nav[data-isheadernav="true"] {
+  display: none;
+}
+
+.navlink:hover,
+.navlink:focus {
+  color: var(--color-primary-orange);
+}
+
+.navlink {
+  color: var(--color-neutral-white);
+  font-size: var(--heading-reg-xx-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* tablet */
+/* desktop */
+
+/*****
+  declarations for footer nav for Footer component
+  *****/
+
+[data-isfooternav="true"] .navlist {
+  display: flex;
+  flex-direction: column;
+  margin-block: 48px;
+  margin-block-start: 40px;
+  gap: 16px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  [data-isfooternav="true"] .navlist {
+    flex-direction: revert;
+    margin-block: 32px;
+    gap: 34px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .desktop-nav[data-isheaderNav="true"] {
+    display: revert;
+  }
+  [data-isfooternav="true"] .navlist {
+    margin-block: 0;
+  }
+
+  [data-isheaderNav="true"] .navlist {
+    display: flex;
+    gap: 34px;
+  }
+
+  [data-isheaderNav="true"] .navlist .navitem {
+    align-items: center;
+    display: flex;
+  }
+}

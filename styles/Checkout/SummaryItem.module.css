@@ -1,0 +1,40 @@
+/* mobile */
+
+.item-wrapper {
+  font-weight: 700;
+  display: flex;
+  gap: 16px;
+}
+
+.img-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  max-width: 64px;
+}
+
+.title-price-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 10px;
+}
+
+.title {
+  color: var(--color-neutral-black);
+  text-transform: uppercase;
+  font-size: var(--heading-reg-sm);
+}
+
+.dollar-sign-price-wrapper {
+  color: var(--color-text);
+  font-size: var(--heading-reg-x-sm);
+}
+
+.quantity {
+  color: var(--color-text);
+  font-size: var(--heading-reg-sm);
+  padding-block-start: 10px;
+  margin-inline-start: auto;
+}

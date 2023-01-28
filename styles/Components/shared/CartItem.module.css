@@ -1,0 +1,90 @@
+/* remove up and down arrow of input type number */
+
+/* hover/focus effect for increment/decrement btn */
+
+.cart-increment:hover,
+.cart-increment:focus,
+.cart-decrement:hover,
+.cart-decrement:focus {
+  color: var(--color-primary-orange);
+}
+
+/* chrome */
+.cart-quantity input[type="number"]::-webkit-outer-spin-button,
+.cart-quantity input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+}
+
+.cart-quantity input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  text-align: center;
+  font-weight: 700;
+  padding: 0;
+  max-width: 32px;
+}
+
+.cart-quantity {
+  display: flex;
+}
+
+.cart-quantity input,
+.cart-quantity button {
+  background-color: transparent;
+  /* padding-inline: 0; */
+  padding-block: 7px;
+}
+
+/* mobile */
+
+.item-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.img-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-inline-end: 16px;
+}
+
+/* cart item img */
+
+.cart-item-img {
+  max-width: revert;
+  width: 64px;
+}
+
+/* title and price */
+
+.title-price-wrapper {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-inline-end: auto;
+}
+
+.title {
+  font-size: var(--heading-reg-sm);
+}
+
+.price {
+  font-size: var(--heading-reg-sm);
+  color: var(--color-text);
+}
+
+.price-digit {
+  font-size: var(--heading-reg-xx-sm);
+  margin-inline-start: 4px;
+}
+
+.cart-quantity {
+  background-color: var(--color-primary-grey);
+  font-size: var(--heading-reg-xx-sm);
+}
+
+.cart-increment,
+.cart-decrement {
+  padding-inline: 11px;
+}

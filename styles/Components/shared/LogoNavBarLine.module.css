@@ -1,0 +1,23 @@
+.line {
+  content: "";
+  display: inline-block;
+  background-color: var(--color-nav-bar-line);
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 48rem) {
+  .line {
+    left: 40px;
+    right: 40px;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .line {
+    left: 164px;
+    right: 164px;
+  }
+}

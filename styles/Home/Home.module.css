@@ -1,0 +1,32 @@
+/* mobile */
+
+.test-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* img grid */
+.grid-container {
+  display: flex;
+  gap: 18px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 40rem) {
+  .test-container {
+    flex-direction: revert;
+    align-items: center;
+    gap: 70px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  /* img grid */
+  .grid-container {
+    gap: 30px;
+  }
+}

@@ -1,0 +1,64 @@
+/* mobile */
+
+.padding-inline-start {
+  padding-inline-start: 10px;
+}
+
+.img-form-wrapper {
+  background-color: var(--color-neutral-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  padding: 24px;
+  font-size: var(--heading-sm-four);
+}
+
+.img-wrapper {
+  display: none;
+}
+
+.login-logo {
+  display: block;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.login-logo path {
+  fill: var(--color-primary-orange);
+}
+
+.greetings {
+  text-align: center;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-block: 10px;
+}
+
+.description {
+  line-height: 1.2;
+}
+
+.register-link-wrapper {
+  text-align: center;
+  font-size: var(--heading-reg);
+}
+
+.register-link-wrapper span {
+  margin-inline-end: 10px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .img-form-wrapper {
+    display: flex;
+    gap: 8px;
+    max-width: 950px;
+  }
+  .img-wrapper {
+    display: revert;
+    flex-basis: 75%;
+    align-self: center;
+  }
+}

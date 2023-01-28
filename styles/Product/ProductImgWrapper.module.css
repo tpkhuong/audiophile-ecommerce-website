@@ -1,0 +1,17 @@
+/* tablet */
+
+/* set flex basis img-wrapper 280px */
+
+@media screen and (min-width: 48rem) {
+  .img-wrapper {
+    flex-basis: 280px;
+  }
+}
+
+/* desktop */
+/* set flex basis img-wrapper 540px */
+@media screen and (min-width: 90rem) {
+  .img-wrapper {
+    flex-basis: 540px;
+  }
+}

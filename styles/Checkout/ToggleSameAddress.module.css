@@ -1,0 +1,59 @@
+.billing-shipping-radio-btns,
+.checking-same-address-validation {
+  font-size: var(--heading-reg-sm);
+  font-weight: 700;
+}
+
+.billing-shipping-radio-btns {
+  margin-block-start: 32px;
+}
+
+.question {
+  display: inline-block;
+  margin-block-end: 8px;
+}
+
+.reminder {
+  font-size: var(--heading-reg-x-sm);
+  font-weight: 500;
+}
+
+.question + .reminder {
+  font-weight: 700;
+  margin-block-end: 8px;
+  font-size: var(--heading-reg-sm);
+}
+
+.margin-block-end {
+  margin-block-end: 8px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.radio-input {
+  display: flex;
+  align-items: center;
+}
+
+.radio-input input {
+  margin-inline-end: 8px;
+}
+
+.checking-same-address-validation {
+  margin-block-start: 20px;
+  margin-block-end: 28px;
+}
+
+@media screen and (min-width: 48rem) {
+  .question {
+    margin-block-end: 12px;
+  }
+  .question + .reminder {
+    margin-block-end: 12px;
+  }
+  .billing-shipping-radio-btns p:nth-of-type(3) {
+    margin-block-end: 15px;
+  }
+}

@@ -1,0 +1,49 @@
+/* mobile */
+
+.general {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.home {
+  margin-block-start: 68px;
+  margin-block-end: 120px;
+}
+
+.category,
+.product {
+  margin-block: 120px;
+}
+
+/* .product {
+  } */
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .general {
+    display: flex;
+    flex-direction: revert;
+    gap: 10px;
+  }
+  .home {
+    margin-block-start: 120px;
+    margin-block-end: 96px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .general {
+    gap: 30px;
+  }
+  .home {
+    margin-block-start: 144px;
+    margin-block-end: 168px;
+  }
+  .category,
+  .product {
+    margin-block: 160px;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "audiophileecommercewebsite",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpkhuong/audiophile-ecommerce-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.2",
+    "next": "^12.2.3",
+    "next-auth": "^4.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/tpkhuong/audiophile-ecommerce-website/issues"
+  },
+  "homepage": "https://github.com/tpkhuong/audiophile-ecommerce-website#readme"
+}

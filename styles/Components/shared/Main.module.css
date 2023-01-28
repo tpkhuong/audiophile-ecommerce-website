@@ -1,0 +1,50 @@
+/* mobile */
+
+.main[data-checkoutpage="true"] {
+  background-color: var(--color-primary-white);
+  position: relative;
+}
+
+[data-checkoutpage="true"].main {
+  padding-block-end: 97px;
+}
+
+[id="register-form"].main,
+[id="login-form"].main {
+  padding-block-end: 0px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding-inline: 24px;
+}
+
+/* tablet */
+@media screen and (min-width: 48rem) {
+  [data-checkoutpage="true"].main {
+    padding-block-end: 116px;
+  }
+  [id="register-form"].main {
+    padding-block-end: 0px;
+  }
+  .main {
+    padding-inline: 40px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  [data-checkoutpage="true"].main {
+    padding-block-end: 141px;
+  }
+  [id="register-form"].main {
+    padding-block-end: 0px;
+  }
+  .main {
+    padding-inline: 165px;
+  }
+}

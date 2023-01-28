@@ -1,0 +1,52 @@
+/* mobile */
+
+/* show/hide modal */
+
+.mobile-bg[data-showmenu="false"] {
+  display: none;
+}
+
+.mobile-bg {
+  position: absolute;
+  inset: 0;
+  top: 91px;
+  background-color: hsl(0 0% 0% / 0.3);
+  z-index: 2;
+}
+
+.mobile-nav {
+  background-color: var(--color-neutral-white);
+  padding-inline: 24px;
+  padding-block: 68px;
+  padding-block-end: 36px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .mobile-nav {
+    padding-inline: 40px;
+  }
+  .navlist {
+    flex-direction: revert;
+    gap: 10px;
+  }
+  .navitem {
+    flex-basis: 223px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 49rem) {
+  .mobile-bg {
+    display: none;
+  }
+}

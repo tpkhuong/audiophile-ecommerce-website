@@ -1,0 +1,255 @@
+/* box shadow */
+/* 0px 0px 35px rgb(0 0 0 / 18%) */
+
+:root {
+  /* primary */
+  --color-primary-orange: hsl(22, 65%, 57%);
+  --color-primary-black: hsl(0, 0%, 6%);
+  --color-primary-grey: hsl(0, 0%, 95%);
+  --color-primary-white: hsl(0, 0%, 98%);
+  --color-primary-error: hsl(0, 65%, 49%);
+  --color-input-border: hsl(0, 0%, 81%);
+  --color-secondary-orange: hsl(21, 94%, 75%);
+  --color-nav-bar-line: hsl(0, 0%, 59%);
+  --color-text: hsl(0, 0%, 45%);
+  --color-orange-hover: hsl(22, 93%, 75%);
+  --color-black-white-hover: hsl(0, 0%, 30%);
+  --color-orange-hover: hsl(22, 93%, 75%);
+  --color-black-white-hover: hsl(0, 0%, 30%);
+  --color-illustration-bg-color: hsl(36, 74%, 56%);
+  --color-register-login-input: hsl(165, 11%, 93%);
+
+  --color-neutral-black: hsl(0, 0%, 0%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+
+  /* 250px */
+  --heading-extra-lrg: 15.625rem;
+  /* 56px */
+  --heading-lrg: 3.5rem;
+  /* 40px */
+  --heading-med: 2.5rem;
+  /* 32px */
+  --heading-sm: 2rem;
+  /* 28px */
+  --heading-sm-two: 1.75rem;
+  /* 24px */
+  --heading-sm-three: 1.5rem;
+  /* 18px */
+  --heading-sm-four: 1.125rem;
+  /* 16px */
+  --heading-reg: 1rem;
+  /* 15px */
+  --heading-reg-sm: 0.9375rem;
+  /* 14px */
+  --heading-reg-x-sm: 0.875rem;
+  /* 13px */
+  --heading-reg-xx-sm: 0.8125rem;
+  /* 12px */
+  --heading-reg-xxx-sm: 0.75rem;
+  /* 18px */
+  --font-size-body: 1.125rem;
+  /* --heading-xxsm: 0.9375rem; */
+
+  --subheading1: 1.75rem;
+  --subheading2: 0.875rem;
+
+  --small-text-space: 2.35px;
+  --medium-text-space: 2.7px;
+  --large-text-space: 4.75px;
+
+  /* focus/hover outline */
+
+  --mobile-focus: 8px;
+
+  --brdr-radius: 16px;
+  /* padding */
+  --padding-small: 8px;
+  --padding-medium: 16px;
+  --padding-large: 24px;
+  --padding-extra-large: 32px;
+  /* margin */
+  --margin-small: 8px;
+  --margin-medium: 16px;
+  --margin-large: 24px;
+  --margin-extra-large: 32px;
+
+  /* timezone-wrapper children padding */
+
+  --mobile-match-padding: 25px;
+  --tablet-match-padding: 64px;
+  --desktop-match-padding: 165px;
+
+  --mobile-padding-margin-match: 16px;
+  --tablet-padding-margin-match: 64px;
+  --tablet-padding-margin-match: 166px;
+  --desktop-padding-margin-match-start: 165px;
+  --desktop-padding-margin-match-end: 431px;
+
+  /* translate x and y match */
+
+  --translate-match: -200%;
+
+  /* --color-hsl-black: 0, 0%, 0%; */
+
+  --box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02),
+    0px 0px 5.3px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.035),
+    0px 0px 17.9px rgba(0, 0, 0, 0.042), 0px 0px 33.4px rgba(0, 0, 0, 0.05),
+    0px 0px 80px rgba(0, 0, 0, 0.07);
+
+  --font-family-manrope: "Manrope", sans-serif;
+}
+
+/* reset */
+
+/*
+    1. Use a more-intuitive box-sizing model.
+  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family-manrope);
+  /* color: var(--color-neutral-black); */
+  font-size: var(--font-size-body);
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: 0;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  border: none;
+}
+
+ul[role],
+li[role],
+li[class] {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* utilities */
+
+.max-width {
+  max-width: 1375px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+[href="#main-content"] {
+  position: absolute;
+  top: 0;
+  left: -100%; /* move of the screen */
+}
+
+[href="#main-content"]:focus {
+  left: 62px;
+}
+
+.skip-link {
+  display: none;
+  font-weight: 700;
+  border: 1px solid red;
+  padding-block: 16px;
+  padding-inline: 32px;
+  z-index: 3;
+}
+
+#__next {
+  /* height: 100%; */
+  /* min-height: 100%; */
+  /* display: flex;
+    flex-direction: column;
+    gap: 100px; */
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 70rem) {
+  .skip-link {
+    display: inline-block;
+  }
+}
+
+.leaflet-container {
+  height: 150px;
+}
