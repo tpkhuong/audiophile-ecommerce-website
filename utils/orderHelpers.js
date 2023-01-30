@@ -18,7 +18,7 @@ export async function showOrderModal(event) {
     paymentMethodSelection,
     renderFormAssistiveData,
   } = refValues;
-  const { eMoney, cashDelivery, inputMoney } = paymentMethodSelection;
+  const { eMoney, inputMoney } = paymentMethodSelection;
   /* check all inputs validity */
   // only call setorderplace(true)
   // when all inputs are valid and a payment method is selected
@@ -127,6 +127,9 @@ export async function showOrderModal(event) {
       );
       // pass customerResult, ordereditemsResult, placedOrderResult to updateOrdersAndCustomer func
       // in createorders we will make api call to create placeorders and orderitems
+      /**
+       * make axios put api call to updatecustomerandorder passing in customerResult and orderResult
+       * **/
       const updateCustomerAndPlacedOrderResult = await updateOrdersAndCustomer(
         customerResult.customer,
         orderedItemsResult.items,
@@ -139,9 +142,6 @@ export async function showOrderModal(event) {
       // inside our if statement when we check if orderResult && customterResult are truthy
       // we want to add new order to existing customer or new customer
       // we want to add exist customer or new customer to new order
-      /**
-       * make axios put api call to updatecustomerandorder passing in customerResult and orderResult
-       * **/
       /** uncomment to see thank you message modal of order **/
       setOrderPlaced(true);
       /** uncomment to see thank you message modal of order **/

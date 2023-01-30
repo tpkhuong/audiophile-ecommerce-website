@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import OrderedItemStyles from "../../styles/Checkout/OrderedItems.module.css";
 import SummaryItem from "./SummaryItem";
 import { showHideItems } from "../../utils/orderHelpers";

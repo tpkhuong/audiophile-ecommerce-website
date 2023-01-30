@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import axios from "axios";
 import LogoNavContainer from "../../../Components/shared/LogoNavContainer";
 import MobileNav from "../../../Components/shared/MobileNav";
 import Main from "../../../Components/shared/Main";
@@ -15,89 +14,84 @@ import ProductIncludedItems from "../../../Components/Product/ProductIncludedIte
 import ProductImageGrid from "../../../Components/Product/ProductImageGrid";
 import ProductRecommendations from "../../../Components/Product/ProductRecommendations";
 import GoBackButton from "../../../Components/shared/GoBackButton";
-import ErrorPage from "next/error";
-import { server } from "../../../config/index";
+import dataFile from "../../../src/data.json";
 
 function ProductPage({ children, ...props }) {
-  if (!props.data && !props.categoryUrl) {
-    return <ErrorPage statusCode={404} />;
-  } else {
-    const {
-      slug,
-      name,
-      image,
-      newProduct,
-      price,
-      description,
-      features,
-      includes,
-      gallery,
-      others,
-    } = props.data;
-    const titleForPage = slug.split("-").join(" ");
-    return (
-      <React.Fragment>
-        <Head>
-          <title>{titleForPage}</title>
-          <link
-            rel="shortcut icon"
-            href="/favicon-32x32.png"
-            type="image/x-icon"
+  const {
+    slug,
+    name,
+    image,
+    newProduct,
+    price,
+    description,
+    features,
+    includes,
+    gallery,
+    others,
+  } = props.data;
+  const titleForPage = slug.split("-").join(" ");
+  return (
+    <React.Fragment>
+      <Head>
+        <title>{titleForPage}</title>
+        <link
+          rel="shortcut icon"
+          href="/favicon-32x32.png"
+          type="image/x-icon"
+        />
+      </Head>
+      <a href="#main-content" className="skip-link">
+        Skip to Main Content
+      </a>
+      <h1 className="visually-hidden">{titleForPage}</h1>
+      <LogoNavContainer />
+      <Main>
+        {/* product-img-textcontent */}
+        {/* go back button component */}
+        {/* <BackBtnWrapper baseCategoryUrl={props.categoryUrl} /> */}
+        <GoBackButton
+          pageMarginBlock="product"
+          baseCategoryUrl={props.categoryUrl}
+        />
+        <article className={ProductPageStyles[`product-img-textcontent`]}>
+          {/* pass in image obj to ProductImgWraper as prop imageSrcObj*/}
+          <ProductImgWrapper imageSrcObj={image} />
+          {/* pass in name(title as props), newProduct, price, description as props to ProductTextPriceInfo */}
+          <ProductTextPriceInfo
+            imgSrcName={slug}
+            title={name}
+            newProduct={newProduct}
+            price={price}
+            description={description}
+            altText={image.text}
           />
-        </Head>
-        <a href="#main-content" className="skip-link">
-          Skip to Main Content
-        </a>
-        <h1 className="visually-hidden">{titleForPage}</h1>
-        <LogoNavContainer />
-        <Main>
-          {/* product-img-textcontent */}
-          {/* go back button component */}
-          {/* <BackBtnWrapper baseCategoryUrl={props.categoryUrl} /> */}
-          <GoBackButton
-            pageMarginBlock="product"
-            baseCategoryUrl={props.categoryUrl}
-          />
-          <article className={ProductPageStyles[`product-img-textcontent`]}>
-            {/* pass in image obj to ProductImgWraper as prop imageSrcObj*/}
-            <ProductImgWrapper imageSrcObj={image} />
-            {/* pass in name(title as props), newProduct, price, description as props to ProductTextPriceInfo */}
-            <ProductTextPriceInfo
-              imgSrcName={slug}
-              title={name}
-              newProduct={newProduct}
-              price={price}
-              description={description}
-              altText={image.text}
-            />
-          </article>
-          {/* product-features-includes */}
+        </article>
+        {/* product-features-includes */}
 
-          <article className={ProductPageStyles[`product-features-includes`]}>
-            {/* pass in features string to ProductFeatures as productText prop */}
-            <ProductFeatures productText={features} />
-            {/* pass in includes array to ProductIncludedItems as includedItems prop */}
-            <ProductIncludedItems includedItems={includes} />
-          </article>
-          {/* product img grid */}
-          {/* apply margin-block here */}
-          <article className={ProductPageStyles[`product-img-grid`]}>
-            {/* pass in gallery obj as galleryImgData prop into ProdcutImgGrid */}
-            <ProductImageGrid galleryImgData={gallery} />
-          </article>
-          {/* recommendations */}
-          {/* pass in others array as recommendations prop to ProductRecommendations  */}
-          <ProductRecommendations recommendations={others} />
-          {/* Category Cards */}
-          <CategoryCardWrapper pageStyle="product" />
-          {/* Mission Statement */}
-          <MissionStatement pageMargin="product" />
-        </Main>
-        <Footer />
-        <MobileNav />
-      </React.Fragment>
-    );
-  }
+        <article className={ProductPageStyles[`product-features-includes`]}>
+          {/* pass in features string to ProductFeatures as productText prop */}
+          <ProductFeatures productText={features} />
+          {/* pass in includes array to ProductIncludedItems as includedItems prop */}
+          <ProductIncludedItems includedItems={includes} />
+        </article>
+        {/* product img grid */}
+        {/* apply margin-block here */}
+        <article className={ProductPageStyles[`product-img-grid`]}>
+          {/* pass in gallery obj as galleryImgData prop into ProdcutImgGrid */}
+          <ProductImageGrid galleryImgData={gallery} />
+        </article>
+        {/* recommendations */}
+        {/* pass in others array as recommendations prop to ProductRecommendations  */}
+        <ProductRecommendations recommendations={others} />
+        {/* Category Cards */}
+        <CategoryCardWrapper pageStyle="product" />
+        {/* Mission Statement */}
+        <MissionStatement pageMargin="product" />
+      </Main>
+      <Footer />
+      <MobileNav />
+    </React.Fragment>
+  );
 }
 
 export default ProductPage;
@@ -130,32 +124,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   /**
-   * using fetch
-   * **/
-  const response = await fetch(
-    `${server}/api/${context.params.category}/${context.params.product}`
-  );
-
-  const categoryUrl = context.params.category;
-
-  const data = response.json();
-
-  /**
-   * using axios
-   * **/
-  // const response = await axios(
-  //   `${server}/api/${context.params.category}/${context.params.product}`
-  // );
-
-  // const categoryUrl = context.params.category;
-
-  // const data = response.data;
-
-  /**
    * without api call
    * **/
 
-  // const categoryUrl = context.params.category;
+  const data = dataFile.details[context.params.product];
+
+  const categoryUrl = context.params.category;
+
   return {
     props: { data, categoryUrl },
   };

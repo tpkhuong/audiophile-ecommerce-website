@@ -2,11 +2,7 @@ import React from "react";
 import CheckoutSummaryStyles from "../../styles/Checkout/CheckoutSummary.module.css";
 import SummaryItem from "./SummaryItem";
 import OrderModalWrapper from "./ConfirmedOrderModalWrapper";
-import {
-  addCommasToPrice,
-  cartModalTotalPrice,
-  taxCalculation,
-} from "../../utils/helpers";
+import { addCommasToPrice, taxCalculation } from "../../utils/helpers";
 
 function CheckoutSummary({ children, ...props }) {
   /**
