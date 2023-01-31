@@ -188,7 +188,9 @@ export async function submitNewUserHandler(event) {
           // redirect to log in page
           setUser(true);
         }
-      } catch (error) {}
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
@@ -288,9 +290,3 @@ export async function loginHandler(event) {
 export function logoutHandler(event) {
   signOut();
 }
-
-/**
- * error helper
- * **/
-
-function getErrors(input) {}
