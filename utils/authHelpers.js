@@ -28,7 +28,7 @@ export async function verifyPassword(loginPassword, hashedPassword) {
 
 export async function createUser(email, password) {
   const { data } = await axios.post(
-    `${process.env.NEXTAUTH_URL}/api/auth/register`,
+    `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/register`,
     {
       email,
       password,
