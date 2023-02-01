@@ -24,24 +24,48 @@ export async function verifyPassword(loginPassword, hashedPassword) {
  * create new user
  * **/
 
-// using axios
-
 export async function createUser(email, password) {
-  console.log("before axios call");
-  const { data } = await axios.post(
+  const response = await fetch(
     `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/register`,
     {
-      email,
-      password,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
     }
   );
+  // browser console
+  console.log("response", response);
 
-  console.log("after axios call");
-  if (!data) {
+  const data = await response.json();
+  // browser console
+  console.log("data", data);
+  if (!response.ok) {
     throw new Error(data.message || "Oops! Fun just getting Started!");
   }
+
   return data;
 }
+
+// using axios
+
+// export async function createUser(email, password) {
+//   console.log("before axios call");
+//   const { data } = await axios.post(
+//     `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/register`,
+//     {
+//       email,
+//       password,
+//     }
+//   );
+
+//   console.log("after axios call");
+//   if (!data) {
+//     throw new Error(data.message || "Oops! Fun just getting Started!");
+//   }
+//   return data;
+// }
 
 /**
  * submit button handler
