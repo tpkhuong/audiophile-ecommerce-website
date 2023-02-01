@@ -27,6 +27,7 @@ export async function verifyPassword(loginPassword, hashedPassword) {
 // using axios
 
 export async function createUser(email, password) {
+  console.log("before axios call");
   const { data } = await axios.post(
     `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/register`,
     {
@@ -35,6 +36,7 @@ export async function createUser(email, password) {
     }
   );
 
+  console.log("after axios call");
   if (!data) {
     throw new Error(data.message || "Oops! Fun just getting Started!");
   }
@@ -184,6 +186,7 @@ export async function submitNewUserHandler(event) {
         const result = await createUser(enteredEmail, enteredPassword);
         // result will be new user
         const { user } = result;
+        console.log(user, "user after calling createUser");
         if (user) {
           // we want to re-render register page to run code in React.useEffect()
           // then run router.push("login")
