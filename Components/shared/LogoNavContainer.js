@@ -8,12 +8,6 @@ import { showMobileNav, targetLastMobileNavElement } from "../../utils/helpers";
 import { logoutHandler } from "../../utils/authHelpers";
 
 function LogoNavContainer({ children, ...props }) {
-  const [hasMounted, setHasMounted] = React.useState(false);
-  const { data: session, loading } = useSession();
-
-  React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
   return (
     <div
       onKeyDown={targetLastMobileNavElement}
@@ -63,73 +57,13 @@ function LogoNavContainer({ children, ...props }) {
         </a>
       </Link>
       {/* full menu */}
-      <FullMenuNav headerNav="true" navLabel="primary" />
-      {/* login,register buttons */}
-      <div className={LogoNavStyles[`register-login-container`]}>
-        {hasMounted ? (
-          <React.Fragment>
-            {!session && !loading && (
-              <React.Fragment>
-                <Link href="/login">
-                  <a
-                    className={LogoNavStyles[`login-btn`]}
-                    aria-label="login with your user account"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-                      <path d="M10 2v2h12v16h-12v2h14v-20h-14zm0 7.408l2.963 2.592-2.963 2.592v-1.592h-8v-2h8v-1.592zm-2-4.408v4h-8v6h8v4l8-7-8-7z" />
-                    </svg>
-                  </a>
-                </Link>
-                <Link href="/register">
-                  <a
-                    className={LogoNavStyles[`register-btn`]}
-                    aria-label="regiser new user"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-                      <path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z" />
-                    </svg>
-                  </a>
-                </Link>
-              </React.Fragment>
-            )}
-            {session && (
-              <React.Fragment>
-                <Link href="/">
-                  <a
-                    onClick={logoutHandler}
-                    className={LogoNavStyles[`register-btn`]}
-                    aria-label="regiser new user"
-                  >
-                    <svg
-                      fill="none"
-                      viewBox="0 0 23 23"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        clipRule="evenodd"
-                        d="M3 13H15V11H3V13Z"
-                        fill="black"
-                        fillRule="evenodd"
-                      />
-                      <path
-                        clipRule="evenodd"
-                        d="M5.79282 7.79291L2.29282 11.2929C1.90229 11.6834 1.90229 12.3166 2.29282 12.7071L5.79282 16.2071L7.20703 14.7929L4.41414 12L7.20703 9.20712L5.79282 7.79291Z"
-                        fill="black"
-                        fillRule="evenodd"
-                      />
-                      <path
-                        clipRule="evenodd"
-                        d="M8 4C8 3.44772 8.44772 3 9 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H9C8.44772 21 8 20.5523 8 20V17H10V19H20V5H10V7H8V4Z"
-                        fill="black"
-                        fillRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </Link>
-              </React.Fragment>
-            )}
-          </React.Fragment>
-        ) : null}
+      <FullMenuNav current={props.page} headerNav="true" navLabel="primary" />
+      <div
+        id="logonavspacer"
+        data-loginbtnrender="false"
+        className={LogoNavStyles[`spacer-container`]}
+      >
+        <LoginRegisterContainer />
       </div>
       {/* cart button */}
       <CartBtnModal />
@@ -138,3 +72,95 @@ function LogoNavContainer({ children, ...props }) {
 }
 
 export default LogoNavContainer;
+
+function LoginRegisterContainer({ children, ...props }) {
+  const [hasMounted, setHasMounted] = React.useState(false);
+  const { data: session, loading } = useSession();
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  {
+    /* login,register buttons */
+  }
+  return (
+    <div className={LogoNavStyles[`register-login-container`]}>
+      {hasMounted ? (
+        <React.Fragment>
+          {!session && !loading && (
+            <React.Fragment>
+              <Link href="/login">
+                <a
+                  className={LogoNavStyles[`login-btn`]}
+                  aria-label="login with your user account"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    //   width="42"
+                    //   height="42"
+                    viewBox="0 0 25 25"
+                  >
+                    <path d="M10 2v2h12v16h-12v2h14v-20h-14zm0 7.408l2.963 2.592-2.963 2.592v-1.592h-8v-2h8v-1.592zm-2-4.408v4h-8v6h8v4l8-7-8-7z" />
+                  </svg>
+                </a>
+              </Link>
+              <Link href="/register">
+                <a
+                  className={LogoNavStyles[`register-btn`]}
+                  aria-label="regiser new user"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    //   width="24"
+                    //   height="24"
+                    viewBox="0 0 25 25"
+                  >
+                    <path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z" />
+                  </svg>
+                </a>
+              </Link>
+            </React.Fragment>
+          )}
+          {session && (
+            <React.Fragment>
+              <Link href="/">
+                <a
+                  onClick={logoutHandler}
+                  className={LogoNavStyles[`register-btn`]}
+                  aria-label="regiser new user"
+                >
+                  <svg
+                    fill="none"
+                    // height="24"
+                    viewBox="0 0 23 23"
+                    // width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clipRule="evenodd"
+                      d="M3 13H15V11H3V13Z"
+                      fill="black"
+                      fillRule="evenodd"
+                    />
+                    <path
+                      clipRule="evenodd"
+                      d="M5.79282 7.79291L2.29282 11.2929C1.90229 11.6834 1.90229 12.3166 2.29282 12.7071L5.79282 16.2071L7.20703 14.7929L4.41414 12L7.20703 9.20712L5.79282 7.79291Z"
+                      fill="black"
+                      fillRule="evenodd"
+                    />
+                    <path
+                      clipRule="evenodd"
+                      d="M8 4C8 3.44772 8.44772 3 9 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H9C8.44772 21 8 20.5523 8 20V17H10V19H20V5H10V7H8V4Z"
+                      fill="black"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </Link>
+            </React.Fragment>
+          )}
+        </React.Fragment>
+      ) : null}
+    </div>
+  );
+}

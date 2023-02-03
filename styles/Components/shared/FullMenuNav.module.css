@@ -20,8 +20,8 @@
 /* desktop */
 
 /*****
-  declarations for footer nav for Footer component
-  *****/
+declarations for footer nav for Footer component
+*****/
 
 [data-isfooternav="true"] .navlist {
   display: flex;
@@ -44,8 +44,12 @@
 /* desktop */
 
 @media screen and (min-width: 90rem) {
+  [data-isheaderNav="true"] .navlink[data-currentpage="true"] {
+    color: var(--color-primary-orange);
+  }
   .desktop-nav[data-isheaderNav="true"] {
     display: revert;
+    margin-inline: 215px;
   }
   [data-isfooternav="true"] .navlist {
     margin-block: 0;

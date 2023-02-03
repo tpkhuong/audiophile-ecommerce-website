@@ -44,11 +44,10 @@ function ProductPage({ children, ...props }) {
         Skip to Main Content
       </a>
       <h1 className="visually-hidden">{titleForPage}</h1>
-      <LogoNavContainer />
+      <LogoNavContainer page={props.categoryUrl} />
       <Main>
         {/* product-img-textcontent */}
         {/* go back button component */}
-        {/* <BackBtnWrapper baseCategoryUrl={props.categoryUrl} /> */}
         <GoBackButton
           pageMarginBlock="product"
           baseCategoryUrl={props.categoryUrl}
@@ -67,7 +66,6 @@ function ProductPage({ children, ...props }) {
           />
         </article>
         {/* product-features-includes */}
-
         <article className={ProductPageStyles[`product-features-includes`]}>
           {/* pass in features string to ProductFeatures as productText prop */}
           <ProductFeatures productText={features} />
@@ -109,11 +107,12 @@ export async function getStaticPaths() {
     ["earphones", "yx1wireless"],
   ];
   const paths = productPaths.map(function makeProductPaths(element) {
-    // const [category, product] = element;
+    const [category, product] = element;
     return {
-      params: { category: element[0], product: element[1] },
+      params: { category, product },
     };
   });
+  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -124,11 +123,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   /**
-   * without api call
+   * without making api call
    * **/
 
   const data = dataFile.details[context.params.product];
-
   const categoryUrl = context.params.category;
 
   return {

@@ -7,7 +7,6 @@
   padding-inline: 24px;
   padding-block: 32px;
   gap: 10px;
-  /* position: relative; */
 }
 /* open/close mobile menu */
 
@@ -33,18 +32,36 @@
 .close-menu {
   background-color: transparent;
   padding: 0;
+  width: 24px;
 }
 
 .close-menu path {
   fill: var(--color-neutral-white);
 }
 
+/* logo */
+
+.logo {
+  margin-inline-end: 38px;
+}
+
+/* spacer */
+
+.spacer-container {
+  width: 56px;
+  height: 26px;
+  position: relative;
+  margin-inline-end: 12px;
+}
+
 /* register/login */
 
 .register-login-container {
   display: flex;
-  gap: 8px;
-  margin-inline-start: auto;
+  gap: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .register-btn,
@@ -69,14 +86,19 @@
   .logo-nav-container {
     padding-inline: 40px;
   }
+
   .logo {
-    margin-inline: auto;
+    margin-inline: 186px;
+  }
+
+  .spacer-container {
+    width: 64px;
+    margin-inline-end: 30px;
   }
 
   .register-login-container {
     margin-inline-start: revert;
-    margin-inline-end: 20px;
-    gap: 16px;
+    gap: 26px;
   }
 }
 
@@ -86,18 +108,21 @@
   .logo-nav-container {
     padding-inline: 165px;
   }
+
   .button-container {
     display: none;
   }
 
   .logo {
     margin-inline: revert;
-    margin-inline-end: auto;
+  }
+
+  .spacer-container {
+    width: 72px;
+    margin-inline-end: 36px;
   }
 
   .register-login-container {
-    margin-inline-start: auto;
-    margin-inline-end: 36px;
     gap: 24px;
   }
 }
