@@ -27,7 +27,7 @@ function Home({ children, ...props }) {
       <h1 className="visually-hidden">Audiophile</h1>
       <header className={HomeStyles[`header`]} role="banner">
         {/* logo nav */}
-        <LogoNavContainer />
+        <LogoNavContainer page="home" />
         {/* hero content */}
         <HeroContent />
       </header>

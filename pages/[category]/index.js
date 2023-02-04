@@ -35,7 +35,7 @@ function CategoryPage({ children, ...props }) {
       </a>
       <h1 className="visually-hidden">{pageTitle}</h1>
       <header role="banner">
-        <LogoNavContainer />
+        <LogoNavContainer page={props.categoryStr} />
         <BannerTitle>{props.categoryStr}</BannerTitle>
       </header>
       <Main>
