@@ -7,6 +7,7 @@ import Link from "next/link";
 
 function FullMenuNav({ children, ...props }) {
   const refObj = React.useContext(ErrorMessageContext);
+
   return (
     <nav
       className={FullNavStyles[`desktop-nav`]}
@@ -28,9 +29,19 @@ function FullMenuNav({ children, ...props }) {
               className={FullNavStyles[`navitem`]}
             >
               <Link href={index == 0 ? "/" : `/${element}`}>
-                <a className={FullNavStyles[`navlink`]} role="menuitem">
-                  {element}
-                </a>
+                {props.current == element ? (
+                  <a
+                    data-currentpage="true"
+                    className={FullNavStyles[`navlink`]}
+                    role="menuitem"
+                  >
+                    {element}
+                  </a>
+                ) : (
+                  <a className={FullNavStyles[`navlink`]} role="menuitem">
+                    {element}
+                  </a>
+                )}
               </Link>
             </li>
           );
