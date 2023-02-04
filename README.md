@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/tpkhuong/audiophile-ecommerce-website)
-- Live Site URL: [Add live site URL here](https://audiophile-ecommerce-website-fsnc.vercel.app/)
+- [Solution URL](https://github.com/tpkhuong/audiophile-ecommerce-website)
+- [Live Site URL](https://audiophile-ecommerce-website-fsnc.vercel.app/)
 
 ## My process
 
