@@ -25,7 +25,7 @@ export default function Login({ children, ...props }) {
         />
         <style>{`#__next{height: 100%}`}</style>
       </Head>
-      <Main isLoginOrRegister="login-form" isDarkerBgTrue="true">
+      <Main isLoginOrRegister="login-form">
         <h1 className="visually-hidden">Login to Account</h1>
         <section className={LoginStyles[`img-form-wrapper`]}>
           {/* image */}

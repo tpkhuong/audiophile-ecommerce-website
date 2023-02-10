@@ -36,7 +36,7 @@ export default function Register({ children, ...props }) {
         />
         <style>{`#__next{height: 100%}`}</style>
       </Head>
-      <Main isLoginOrRegister="register-form" isDarkerBgTrue="true">
+      <Main isLoginOrRegister="register-form">
         <h1 className="visually-hidden">Register Account</h1>
         <section className={RegisterStyles[`img-form-wrapper`]}>
           {/* image */}
